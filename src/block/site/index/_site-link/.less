@@ -1,6 +1,78 @@
 .site-link {
+	@colored : rgba(255, 112, 0, 0.2);
+	
+	position:relative;
 	display:inline-block;
-	#fe.bg(rgba(0,0,0,0.5));
-	#fe.w(300px);
-	#fe.h(300px);
+	border-radius:50%;
+	//#fe.bg(rgba(0,0,0,0.5));
+	#fe.w(585px);
+	#fe.h(585px);
+	
+	&:before,&:after {
+		content:'';
+		position:absolute;
+		border-radius:50%;
+		opacity:0;
+		#fe.z(0);
+		#fe.bg(@colored);
+	}
+	
+	&:before {
+		left:7%;
+		top:7%;
+		transition:all @trans-speed / 2.5 ease;
+		box-shadow: 0px 0px 20.8px 11.2px rgba(0,0,0,0.15);
+		#fe.w(86%);
+		#fe.h(86%);
+	}
+	&:after {
+		#fe.w(100%);
+		#fe.h(100%);
+		transition:all @trans-speed / 1 ease;
+	}
+	
+	.circle {
+		position:absolute;
+		border-radius:50%;
+		left:13%;
+		top:13%;
+		transition:all @trans-speed / 1.33333333 ease;
+		box-shadow: none;
+		#fe.w(74%);
+		#fe.h(74%);
+		#fe.bg(transparent);
+		#fe.bpos();
+		#fe.brep();
+		//#fe.bsize(contain);
+	}
+	
+	&[data-logo="fe"] .circle {
+		#site.bi('index/fe-logo.png');
+	}
+	&[data-logo="ce"] .circle {
+		#site.bi('index/ce-logo.png');
+	}
+	
+	&:hover {
+		.circle {
+			#fe.bg(@colored);
+			box-shadow: 0px 0px 13.44px 10.56px rgba(0,0,0,0.15);
+		}
+	}
+	
+	.page-container[data-state="1"] &:first-child {
+		&:before,&:after {
+			opacity:1;
+		}
+	}
+	.page-container[data-state="2"] &:last-child {
+		&:before,&:after {
+			opacity:1;
+		}
+	}
+	.page-container[data-state="0"] & {
+		&:before,&:after {
+			opacity:1;
+		}
+	}
 }
