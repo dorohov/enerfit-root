@@ -1,0 +1,21 @@
+.full-screen.page-loader {
+	@dark-el-color-bg:rgba(0,0,0,0.75);
+	@dark-el-color-font:#ffffff;
+	
+	@semi-dark-el-color-bg:rgba(0,0,0,0.4);
+	@semi-dark-el-color-font:#ffffff;
+	
+	transition: all @trans-speed ease;
+	
+	opacity:0;
+	//height: 0%;
+	
+	&.white-loader {
+		#fe.bg(#ffffff);
+	}
+	
+	&.active {
+		opacity:1;
+		//height: 100%;
+	}
+}
