@@ -103,6 +103,18 @@ body {
 
 html, body, .page-container {
 	#fe.h(100%);
+	
+	@media @media-size-xs {
+		&{
+			//#fe.h(auto);
+		}
+	}
+	
+	@media @media-size-sm {
+		&{
+			//#fe.h(auto);
+		}
+	}
 }
 .page-container {
 	position:relative;
@@ -112,8 +124,89 @@ html, body, .page-container {
 	align-items:center;
 	flex-wrap:wrap;
 	#fe.z(2);
+	
+	@media @media-size-xs {
+		&{
+			overflow: inherit;
+			#fe.bpos();
+			#fe.brep();
+			#fe.bsize(cover);
+			#site.bi('index/bg-video-poster.jpg');
+			
+			.landscape & {
+				#fe.h(100%);
+			}
+			.portrait & {
+				#fe.h(auto);
+			}
+		}
+	}
+	
+	@media @media-size-sm {
+		&{
+			overflow: inherit;
+			#fe.bpos();
+			#fe.brep();
+			#fe.bsize(cover);
+			#site.bi('index/bg-video-poster.jpg');
+			
+			.landscape & {
+				#fe.h(100%);
+			}
+			.portrait & {
+				#fe.h(auto);
+			}
+		}
+	}
+	
+	@media @media-size-md {
+		&{
+			.mobile &, .tablet & {
+				overflow: inherit;
+				#fe.bpos();
+				#fe.brep();
+				#fe.bsize(cover);
+				#site.bi('index/bg-video-poster.jpg');
+				#fe.h(100%);
+			}
+			.desktop & {
+				overflow: inherit;
+				#fe.h(100%);
+			}
+		}
+	}
+	
+	.desktop.portrait & {
+		overflow: inherit;
+		#fe.h(100%);
+	}
 }
 body {
 	position:relative;
-	overflow:hidden;
+	overflow-x:hidden;
+	overflow-y:hidden;
+	
+	@media @media-size-xs {
+		&{
+			overflow-y: inherit;
+		}
+	}
+	
+	@media @media-size-sm {
+		&{
+			overflow-y: inherit;
+		}
+	}
+	
+	@media @media-size-md {
+		&{
+			.desktop & {
+				overflow-y: inherit;
+			}
+		}
+	}
+	
+	.desktop.portrait & {
+		overflow-y: inherit;
+	}
 }

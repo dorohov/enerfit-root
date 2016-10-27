@@ -3,11 +3,37 @@
 	#fe.z(1);
 	
 	&[data-orientation="l"] {
-		left:0;
 		#fe.w(100%);
 	}
 	&[data-orientation="p"] {
-		top:0;
 		#fe.h(100%);
 	}
+	
+	@media @media-size-xs {
+		&{
+			display:none;
+		}
+	}
+	
+	@media @media-size-sm {
+		&{
+			display:none;
+		}
+	}
+	
+	@media @media-size-md {
+		&{
+			.mobile &, .tablet & {
+				display:none;
+			}
+			.desktop & {
+				top:0;
+				#fe.w(auto);
+				#fe.h(100%);
+			}
+		}
+	}
+}
+.bg-audio {
+	display:none;
 }

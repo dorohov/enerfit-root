@@ -26,9 +26,41 @@
 	position:relative;
 	#fe.w(160px);
 	#fe.ff(HelveticaNeueCyr);
-	#fe.size(19px);
+	#fe.size(18px);
+	#fe.lh(1.7em);
 	#fe.bold(500);
 	#fe.color(#ffffff);
+	
+	@media @media-size-xs {
+		&{
+			order:0;
+			padding:2em 0;
+			
+			.landscape & {
+				padding:0.4em 0 0;
+				#fe.w(100%);
+			}
+		}
+	}
+	
+	@media @media-size-sm {
+		&{
+			order:0;
+			padding:1em 0 2em;
+			#fe.w(100%);
+		}
+	}
+	
+	@media @media-size-md {
+		&{
+			.mobile &, .tablet & {
+				
+			}
+			.desktop & {
+				
+			}
+		}
+	}
 	
 	&:before, &:after {
 		content:'';
@@ -42,6 +74,18 @@
 		#fe.w(50%);
 		#fe.h(100%);
 		#fe.brep();
+		
+		@media @media-size-xs {
+			&{
+				content:none;
+			}
+		}
+		
+		@media @media-size-sm {
+			&{
+				content:none;
+			}
+		}
 	}
 	
 	&:before {
@@ -64,7 +108,7 @@
 		#fe.color(#ffffff);
 	}
 	.energy {
-		#fe.size(26px);
+		#fe.size(28px);
 		#fe.uppercase();
 	}
 	
