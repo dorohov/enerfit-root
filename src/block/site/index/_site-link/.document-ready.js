@@ -3,11 +3,11 @@ $(function() {
 	var pc = $('.page-container');
 	var v_jq = $('.bg-video');
 	var v = v_jq.get(0);
-	var a_jq = $('.bg-audio');
-	var a = a_jq.get(0);
+	//var a_jq = $('.bg-audio');
+	//var a = a_jq.get(0);
 	
 	var attack = function(state) {
-		a.play();
+		//a.play();
 		pc.attr('data-state', state);
 		setTimeout(function(){
 			pc.attr('data-state', '');
