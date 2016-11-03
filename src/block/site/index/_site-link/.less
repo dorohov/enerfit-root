@@ -152,6 +152,7 @@
 	@media @media-size-md {
 		&{
 			.mobile &, .tablet & {
+				border-radius:0%;
 				#fe.w(333px);
 				#fe.h(333px);
 			}
@@ -264,6 +265,26 @@
 			#fe.h(100%);
 			#fe.bpos();
 			#fe.brep();
+			
+			@media @media-size-xs {
+				& {
+					border-radius:0%;
+					#fe.bsize(75%);
+				}
+			}
+			@media @media-size-sm {
+				& {
+					border-radius:0%;
+					#fe.bsize(85%);
+				}
+			}
+			@media @media-size-md {
+			&{
+					.mobile &, .tablet & {
+						border-radius:0%;
+					}
+				}
+			}
 		}
 		
 	}
